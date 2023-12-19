@@ -13,6 +13,7 @@ public class Movimiento : MonoBehaviour
     public LayerMask GroundMask;
     public bool Grounded;
     public int Saltos;
+    public float Gravedad = 12.41067f;
 
     Rigidbody2D rb;
     void Start()
@@ -58,5 +59,13 @@ public class Movimiento : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         Grounded = false;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (Grounded == true & other.gameObject.CompareTag("Trampolin"))
+        {
+            rb.velocity = Vector2.zero;
+            rb.AddForce(Vector2.up * 32.6581f, ForceMode2D.Impulse);
+        }
     }
 }
