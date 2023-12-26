@@ -27,12 +27,12 @@ public class Movimiento : MonoBehaviour
     {
         transform.position += Vector3.right * Velocidad[(int)VelocidadActual] * Time.deltaTime;
 
-        if(rb.velocity.y < -24.2f)
+        if (rb.velocity.y < -24.2f)
         {
             rb.velocity = new Vector2(rb.velocity.x, -24.2f);
         }
 
-        if(Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             if (Grounded == true)
             {
