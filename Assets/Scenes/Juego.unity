@@ -1318,6 +1318,7 @@ MonoBehaviour:
   Grounded: 0
   Saltos: 0
   Gravedad: 12.41067
+  FuerzaSalto: 26.6581
 --- !u!50 &1085459443
 Rigidbody2D:
   serializedVersion: 4

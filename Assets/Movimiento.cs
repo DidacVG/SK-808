@@ -14,6 +14,7 @@ public class Movimiento : MonoBehaviour
     public bool Grounded;
     public int Saltos;
     public float Gravedad = 12.41067f;
+    public float FuerzaSalto = 26.6581f;
 
     Rigidbody2D rb;
     void Start()
@@ -37,7 +38,7 @@ public class Movimiento : MonoBehaviour
             if (Grounded == true)
             {
                 rb.velocity = Vector2.zero;
-                rb.AddForce(Vector2.up * 26.6581f, ForceMode2D.Impulse);
+                rb.AddForce(Vector2.up * FuerzaSalto, ForceMode2D.Impulse);
             }
             else
             {
@@ -45,7 +46,7 @@ public class Movimiento : MonoBehaviour
                 {
                     Saltos += 1;
                     rb.velocity = Vector2.zero;
-                    rb.AddForce(Vector2.up * 26.6581f, ForceMode2D.Impulse);
+                    rb.AddForce(Vector2.up * FuerzaSalto, ForceMode2D.Impulse);
                 }
             }
         }
@@ -59,13 +60,5 @@ public class Movimiento : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         Grounded = false;
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (Grounded == true & other.gameObject.CompareTag("Trampolin"))
-        {
-            rb.velocity = Vector2.zero;
-            rb.AddForce(Vector2.up * 32.6581f, ForceMode2D.Impulse);
-        }
     }
 }
