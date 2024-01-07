@@ -7,6 +7,9 @@ TagManager:
   - Rail techo
   - Trampolin
   - Plataforma
+  - Pincho
+  - Moneda
+  - Vacio
   layers:
   - Default
   - TransparentFX
