@@ -58,9 +58,10 @@ public class Movimiento : MonoBehaviour
     {
         Grounded = true;
         Saltos = 0;
-        if (collision.gameObject.tag == "Finish")
+        if (collision.gameObject.tag == "Meta")
         {
             transform.position += Vector3.right * 0 * Time.deltaTime;
+            SceneManager.LoadScene("Menu");
         }
         if (collision.gameObject.tag == "Respawn")
         {

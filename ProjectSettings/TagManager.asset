@@ -10,6 +10,7 @@ TagManager:
   - Pincho
   - Moneda
   - Vacio
+  - Meta
   layers:
   - Default
   - TransparentFX
